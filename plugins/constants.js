@@ -9,10 +9,6 @@ export default {
       url: '/WhatService',
     },
     {
-      name: 'About',
-      url: '/AboutMe',
-    },
-    {
       name: 'Contact',
       url: '/ContactMe',
     },
@@ -20,7 +16,7 @@ export default {
   footerItems: [
     {
       name: 'Privacy policy',
-      url: '#',
+      url: '/PrivacyPolicy',
     },
     {
       name: 'Disclaimer',

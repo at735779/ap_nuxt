@@ -43,7 +43,7 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: { baseURL: 'http://127.0.0.1:8000' },
+  axios: { baseURL: 'http://elastic-ip.admin-push.net/' },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

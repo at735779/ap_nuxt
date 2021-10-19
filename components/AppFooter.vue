@@ -5,6 +5,7 @@
       <v-btn
         v-for="footerItem in footerItems"
         :key="footerItem.name"
+        :to="footerItem.url"
         depressed
         text
       >
