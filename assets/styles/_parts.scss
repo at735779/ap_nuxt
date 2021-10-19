@@ -1,0 +1,19 @@
+/* 要素ごとにスタイルを設定 */
+
+/* セクションタイトルのスタイル設定 */
+.section__title {
+  padding-top: 120px;
+  text-align: center;
+
+  &-text {
+    font-weight: 700;
+    font-size: 40px;
+    color: #db973d;
+  }
+}
+
+/* 画像サイズの設定 */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}

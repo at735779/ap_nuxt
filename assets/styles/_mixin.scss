@@ -1,0 +1,14 @@
+/* メディアクエリ */
+
+/* 画面サイズの閾値 */
+$xs: 600;
+
+/* mixin用変数 */
+$pc-min: $xs + px;
+
+/* 600px以上はデスクトップPC画面（大画面） */
+@mixin display_pc {
+  @media (min-width: $pc-min) {
+    @content;
+  }
+}
