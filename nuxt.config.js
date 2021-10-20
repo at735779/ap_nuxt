@@ -43,7 +43,7 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: { baseURL: 'http://elastic-ip.admin-push.net/' },
+  axios: { baseURL: process.env.API_URL || 'http://127.0.0.1:8000' },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -98,18 +98,27 @@ export default {
         },
         endpoints: {
           login: {
-            url: 'api/login',
+            url: '/api/login',
             method: 'post',
             propertyName: 'token',
           },
           logout: false,
           user: {
-            url: 'api/user',
+            url: '/api/user',
             method: 'get',
             propertyName: 'user',
           },
         },
       },
     },
+  },
+
+  // 環境変数の定義
+  publicRuntimeConfig: {
+    apiGetWord: process.env.API_GET_WORD,
+    apiGetDataToSend: process.env.API_GET_DATA_TO_SEND,
+    apiGetConstantWord: process.env.API_GET_CONSTANT_WORD,
+    apiPostWord: process.env.API_POST_WORD,
+    apiRegisterUser: process.env.API_REGISTER_USER,
   },
 }

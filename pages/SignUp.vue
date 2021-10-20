@@ -43,6 +43,13 @@
 <script>
 export default {
   auth: false,
+
+  asyncData({ $config }) {
+    return {
+      apiRegisterUser: $config.apiRegisterUser,
+    }
+  },
+
   data() {
     return {
       valid: false,
@@ -51,13 +58,13 @@ export default {
         email: '',
         password: '',
       },
+      apiRegisterUser: '',
     }
   },
   methods: {
     async postSignUp() {
-      const url = 'http://127.0.0.1:8000/api/register_user'
       await this.$axios
-        .$post(url, this.signUp)
+        .$post(this.apiRegisterUser, this.signUp)
         .then((res) => {
           this.$router.push('/SignUpSuccess')
           return res.response

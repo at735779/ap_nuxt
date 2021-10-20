@@ -47,13 +47,10 @@
 export default {
   layout: 'AfterLoginLayout',
 
-  async asyncData({ $axios }) {
-    const registeredUrl = 'http://127.0.0.1:8000/api/get_word'
-    const dataToSendUrl = 'http://127.0.0.1:8000/api/get_data_to_send'
-
+  async asyncData({ $axios, $config }) {
     const [registeredResponse, dataToSendResponse] = await Promise.all([
-      $axios.$get(registeredUrl),
-      $axios.$get(dataToSendUrl),
+      $axios.$get($config.apiGetWord),
+      $axios.$get($config.apiGetDataToSend),
     ])
 
     return {

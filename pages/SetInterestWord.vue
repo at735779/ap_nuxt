@@ -44,12 +44,10 @@ export default {
   layout: 'AfterLoginLayout',
 
   // DBからマスタデータ（定型ワード）と登録済みのワードを取得
-  async asyncData({ $axios }) {
-    const registeredUrl = 'http://127.0.0.1:8000/api/get_word'
-    const constantUrl = 'http://127.0.0.1:8000/api/get_constant_word'
+  async asyncData({ $axios, $config }) {
     const [registeredResponse, constantResponse] = await Promise.all([
-      $axios.$get(registeredUrl),
-      $axios.$get(constantUrl),
+      $axios.$get($config.apiGetWord),
+      $axios.$get($config.apiGetConstantWord),
     ])
 
     // post用の配列の初期値を設定
@@ -63,6 +61,7 @@ export default {
       registeredWords: registeredResponse.registered_words,
       constantWords: constantResponse.constant_words,
       postWords: postArray,
+      apiPostWord: $config.apiPostWord,
     }
   },
 
@@ -74,6 +73,7 @@ export default {
       registeredWords: [],
       postWords: [],
       onceFlag: '',
+      apiPostWord: '',
     }
   },
 
@@ -90,9 +90,8 @@ export default {
 
     // 登録したいワードの配列を送信
     async postInterestWord() {
-      const postUrl = 'http://127.0.0.1:8000/api/post_word'
       await this.$axios
-        .$post(postUrl, this.postWords)
+        .$post(this.apiPostWord, this.postWords)
         .then((res) => {
           this.$router.push('/PostSuccess')
           return res.response
