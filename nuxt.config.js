@@ -120,5 +120,6 @@ export default {
     apiGetConstantWord: process.env.API_GET_CONSTANT_WORD,
     apiPostWord: process.env.API_POST_WORD,
     apiRegisterUser: process.env.API_REGISTER_USER,
+    baseURL: process.env.API_URL
   },
 }
