@@ -18,10 +18,6 @@ export default {
       name: 'Privacy policy',
       url: '/PrivacyPolicy',
     },
-    {
-      name: 'Disclaimer',
-      url: '#',
-    },
   ],
   aboutItems: [
     {

@@ -12,13 +12,10 @@
         >
           {{ menuItem.name }}
         </v-tab>
+        <v-tab v-if="!$auth.loggedIn" :to="'/SignUp'">SignUp</v-tab>
+        <v-tab v-if="$auth.loggedIn" :to="'/Home'">Home</v-tab>
+        <v-tab v-else :to="'/UserLogin'">Login</v-tab>
       </v-tabs>
-      <!-- ユーザー登録ボタン -->
-      <AppSignUpButton />
-      <!-- ログインボタン -->
-      <v-tab>
-      <AppLoginButton />
-      </v-tab>
     </v-app-bar>
     <!-- サイドメニューの作成 -->
     <v-navigation-drawer v-model="drawer" fixed temporary>
@@ -31,6 +28,13 @@
           >
             <v-list-item-title>{{ menuItem.name }}</v-list-item-title>
           </v-list-item>
+          <v-list-item v-if="!$auth.loggedIn" :to="'/SignUp'"
+            >
+            SignUp
+            </v-list-item
+          >
+          <v-list-item v-if="$auth.loggedIn" :to="'/Home'">Home</v-list-item>
+          <v-list-item v-else :to="'/UserLogin'">Login</v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -40,16 +44,10 @@
 <script>
 // ヘッダー、サイドメニュー用の定数及びボタンコンポーネントの読込
 import constants from '../plugins/constants.js'
-import AppLoginButton from './AppLoginButton.vue'
-import AppSignUpButton from './AppSignUpButton.vue'
 
 // サイドメニュー表示切替用変数drawer、メニュー項目用配列menuItems
 export default {
   name: 'AppHeader',
-  components: {
-    AppLoginButton,
-    AppSignUpButton,
-  },
   data() {
     return {
       drawer: false,

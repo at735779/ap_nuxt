@@ -10,10 +10,6 @@
       </v-row>
       <!-- アカウント登録用のボタン -->
       <app-button :button-text="buttonText" :url="url" />
-      <v-row>
-        {{ apiGetWord }}{{ apiGetDataToSend }}{{ apiGetConstantWord
-        }}{{ apiPostWord }}{{ apiRegisterUser }}{{ baseURL }}
-      </v-row>
     </v-container>
   </section>
 </template>
@@ -28,17 +24,6 @@ export default {
 
   components: {
     AppButton,
-  },
-
-  asyncData({ $config }) {
-    return {
-      apiGetWord: $config.apiGetWord,
-      apiGetDataToSend: $config.apiGetDataToSend,
-      apiGetConstantWord: $config.apiGetConstantWord,
-      apiPostWord: $config.apiPostWord,
-      apiRegisterUser: $config.apiRegisterUser,
-      baseURL: $config.baseURL,
-    }
   },
 
   data() {
