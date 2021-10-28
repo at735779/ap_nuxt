@@ -3,7 +3,7 @@
     <!-- ヘッダーの作成 -->
     <v-app-bar app dark color="indigo">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <v-toolbar-title>AdminPush</v-toolbar-title>
+      <v-toolbar-title>しらせる</v-toolbar-title>
       <v-tabs>
         <v-tab
           v-for="menuItem in menuItems"
@@ -12,9 +12,9 @@
         >
           {{ menuItem.name }}
         </v-tab>
-        <v-tab v-if="!$auth.loggedIn" :to="'/SignUp'">SignUp</v-tab>
-        <v-tab v-if="$auth.loggedIn" :to="'/Home'">Home</v-tab>
-        <v-tab v-else :to="'/UserLogin'">Login</v-tab>
+        <v-tab v-if="!$auth.loggedIn" :to="'/SignUp'">ユーザー登録</v-tab>
+        <v-tab v-if="$auth.loggedIn" :to="'/Home'">ホーム</v-tab>
+        <v-tab v-else :to="'/UserLogin'">ログイン</v-tab>
       </v-tabs>
     </v-app-bar>
     <!-- サイドメニューの作成 -->
@@ -28,13 +28,15 @@
           >
             <v-list-item-title>{{ menuItem.name }}</v-list-item-title>
           </v-list-item>
-          <v-list-item v-if="!$auth.loggedIn" :to="'/SignUp'"
-            >
-            SignUp
-            </v-list-item
-          >
-          <v-list-item v-if="$auth.loggedIn" :to="'/Home'">Home</v-list-item>
-          <v-list-item v-else :to="'/UserLogin'">Login</v-list-item>
+          <v-list-item v-if="!$auth.loggedIn" :to="'/SignUp'">
+            <v-list-item-title> ユーザー登録 </v-list-item-title>
+          </v-list-item>
+          <v-list-item v-if="$auth.loggedIn" :to="'/Home'">
+            <v-list-item-title> ホーム </v-list-item-title>
+          </v-list-item>
+          <v-list-item v-else :to="'/UserLogin'">
+            <v-list-item-title> ログイン </v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>

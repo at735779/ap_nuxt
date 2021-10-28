@@ -1,21 +1,21 @@
 export default {
   menuItems: [
     {
-      name: 'Top',
+      name: 'トップ',
       url: '/',
     },
     {
-      name: 'Service',
+      name: 'サービス',
       url: '/WhatService',
     },
     {
-      name: 'Contact',
+      name: 'お問い合わせ',
       url: '/ContactMe',
     },
   ],
   footerItems: [
     {
-      name: 'Privacy policy',
+      name: 'プライバシーポリシー',
       url: '/PrivacyPolicy',
     },
   ],
@@ -47,15 +47,15 @@ export default {
   ],
   afterLoginMenuItems: [
     {
-      name: 'Home',
+      name: 'ホーム',
       url: '/Home',
     },
     {
-      name: 'Register Word',
+      name: 'ワード登録',
       url: '/SetInterestWord',
     },
     {
-      name: 'TOP',
+      name: 'トップ',
       url: '/',
     },
   ],

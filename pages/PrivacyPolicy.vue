@@ -1,7 +1,7 @@
 <template>
   <section class="privacy-policy">
     <section class="section__title">
-      <section class="section__title-text">Privacy Policy</section>
+      <section class="section__title-text">プライバシーポリシー</section>
     </section>
     <v-container>
       <v-card>

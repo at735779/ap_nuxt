@@ -2,7 +2,7 @@
   <!-- 問い合わせフォーム -->
   <section class="home-contact">
     <div class="section__title">
-      <div class="section__title-text">Contact</div>
+      <div class="section__title-text">お問い合わせ</div>
     </div>
   <v-container>
     <v-card align="center">
