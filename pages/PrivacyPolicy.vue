@@ -1,4 +1,5 @@
 <template>
+  <!-- プライバシーポリシー -->
   <section class="privacy-policy">
     <section class="section__title">
       <section class="section__title-text">プライバシーポリシー</section>

@@ -1,4 +1,5 @@
 <template>
+  <!-- ワード登録ページ -->
   <section class="set-interest-word">
     <div class="section__title">
       <div class="section__title-text">ワード登録</div>
@@ -9,6 +10,7 @@
           >興味のあるワードを選択して「登録」ボタンを押してください</v-col
         >
       </v-row>
+      <!-- 子SetInterestWordChildと連携して登録用のボタンを表示 -->
       <v-row class="grey lighten-2">
         <v-col
           v-for="(constantWordItem, constantWordIndex) in constantWords"

@@ -1,4 +1,5 @@
 <template>
+  <!-- ユーザーページ用のレイアウト -->
   <v-app>
     <v-main>
       <AppAfterLoginHeader />

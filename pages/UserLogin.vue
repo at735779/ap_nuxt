@@ -1,4 +1,5 @@
 <template>
+  <!-- ログインページ -->
   <section class="user-login">
     <v-card class="mt-5 mx-auto" max-width="600">
       <v-form v-model="valid">
@@ -47,6 +48,7 @@ export default {
     }
   },
   methods: {
+    // ログインにはauthモジュールのメソッドを使用
     async userLogin() {
       try {
         await this.$auth.loginWith('local', {

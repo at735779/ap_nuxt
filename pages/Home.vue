@@ -1,4 +1,5 @@
 <template>
+  <!-- ユーザーホーム -->
   <section class="home">
     <div class="section__title">
       <div class="section__title-text">ユーザーホーム</div>
@@ -8,6 +9,7 @@
         <v-col class="text-h6 mt-5" cols="12">
           こんにちは、{{ $auth.user.name }} さん
         </v-col>
+        <!-- 登録中のワードの表示 -->
         <v-col class="text-h6" cols="12" align="center">
           登録中のキーワード
         </v-col>
@@ -25,6 +27,7 @@
         </v-col>
       </v-row>
       <v-row>
+        <!-- 更新情報一覧の表示 -->
         <v-col class="text-h6 mt-15" cols="12" align="center"
           >更新情報一覧</v-col
         >
@@ -47,6 +50,7 @@
 export default {
   layout: 'AfterLoginLayout',
 
+  // 環境変数の読込及び登録ワードと更新情報の取得
   async asyncData({ $axios, $config }) {
     const [registeredResponse, dataToSendResponse] = await Promise.all([
       $axios.$get($config.apiGetWord),
@@ -62,8 +66,10 @@ export default {
   data() {
     return {
       response: '',
+
+      // 更新情報テーブル用の値定義
       headers: [
-        { text: 'TITLE', value: 'title' },
+        { text: 'タイトル', value: 'title' },
         { text: 'URL', value: 'url' },
       ],
     }

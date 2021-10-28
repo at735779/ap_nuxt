@@ -12,9 +12,8 @@
         >
           {{ menuItem.name }}
         </v-tab>
+        <v-tab @click="$auth.logout()">ログアウト</v-tab>
       </v-tabs>
-      <!-- ログアウトボタンコンポーネント -->
-      <app-logout-button />
     </v-app-bar>
     <!-- サイドメニューの作成 -->
     <v-navigation-drawer v-model="drawer" fixed temporary>
@@ -27,6 +26,9 @@
           >
             <v-list-item-title>{{ menuItem.name }}</v-list-item-title>
           </v-list-item>
+          <v-list-item @click="$auth.logout()">
+            <v-list-item-title> ログアウト </v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -36,14 +38,10 @@
 <script>
 // ヘッダー、サイドメニュー用の定数及びボタンコンポーネントの読込
 import constants from '../plugins/constants.js'
-import AppLogoutButton from './AppLogoutButton.vue'
 
 // サイドメニュー表示切替用変数drawer、メニュー項目用配列menuItems
 export default {
   name: 'AppAfterLoginHeader',
-  components: {
-    AppLogoutButton,
-  },
   data() {
     return {
       drawer: false,

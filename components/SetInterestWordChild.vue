@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  // SetInterestWordからボタン用の変数を受け取る
+  // 親SetInterestWordからボタン用の変数を受け取る
   props: {
     constantWord: {
       type: String,

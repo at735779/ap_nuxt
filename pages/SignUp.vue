@@ -1,4 +1,5 @@
 <template>
+  <!-- ユーザー登録ページ -->
   <section class="sign-up">
     <v-card class="mt-5 mx-auto" max-width="600">
       <v-form v-model="valid">
@@ -44,12 +45,14 @@
 export default {
   auth: false,
 
+  // 環境変数の読込
   asyncData({ $config }) {
     return {
       apiRegisterUser: $config.apiRegisterUser,
     }
   },
 
+  // 初期値の設定
   data() {
     return {
       valid: false,
@@ -61,7 +64,9 @@ export default {
       apiRegisterUser: '',
     }
   },
+
   methods: {
+    // 登録情報の送信
     async postSignUp() {
       await this.$axios
         .$post(this.apiRegisterUser, this.signUp)

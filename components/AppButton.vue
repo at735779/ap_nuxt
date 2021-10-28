@@ -2,7 +2,7 @@
   <!-- ボタンコンポーネント -->
   <v-row class="button">
     <v-col>
-      <!-- メディアクエリ用に大ボタンと小ボタンを用意 -->
+      <!-- 画面サイズに応じて表示を変更 -->
       <v-btn x-large dark color="indigo" min-width="400" :to="url">
         ＞＞{{ buttonText }}
       </v-btn>

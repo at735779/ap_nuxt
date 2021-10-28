@@ -1,4 +1,5 @@
 <template>
+  <!-- ユーザー登録成功画面 -->
   <section class="post-success">
     <v-container>
       <v-row>
