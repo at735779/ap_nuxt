@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       buttonText: '今すぐ使う',
-      url: '/',
+      url: '/Home',
     }
   },
 }
